@@ -20,4 +20,8 @@ ADD php.ini /usr/local/etc/php/conf.d/40-custom.ini
 
 WORKDIR /var/www/app
 
+COPY composer.json .
+
+RUN composer install
+
 CMD ["php-fpm"]
