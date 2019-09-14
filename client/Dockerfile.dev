@@ -1,0 +1,11 @@
+FROM node:10.16-alpine
+
+WORKDIR /var/www/app
+
+COPY package.json .
+
+RUN yarn
+
+COPY . .
+
+CMD ["yarn", "dev"]

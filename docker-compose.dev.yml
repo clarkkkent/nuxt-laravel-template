@@ -1,0 +1,21 @@
+version: '3.2'
+services:
+  client:
+    build:
+      context: ./client
+      dockerfile: Dockerfile.dev
+
+  mysql:
+    ports:
+      - 8989:3306
+
+  myadmin:
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - 8080:80
+
+
+
+
+
+
