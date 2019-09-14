@@ -16,11 +16,11 @@ RUN apt-get update && apt-get install -y \
 
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 RUN usermod -u 1000 www-data
-ADD ../docker/php/php.ini /usr/local/etc/php/conf.d/40-custom.ini
+ADD docker /usr/local/etc/php/conf.d/40-custom.ini
 
 WORKDIR /var/www/app
 
-COPY composer.json .
+COPY ../composer.json .
 
 RUN composer install
 
