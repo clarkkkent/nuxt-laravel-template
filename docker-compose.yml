@@ -12,7 +12,7 @@ services:
 
   server:
     build:
-      context: ./docker/php
+      context: ./server
       dockerfile: Dockerfile
     env_file:
       - ".env"
